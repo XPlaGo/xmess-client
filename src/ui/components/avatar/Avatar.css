@@ -1,0 +1,43 @@
+.Icon {
+  margin: auto 0;
+  grid-area: icon;
+  background: rgba(117, 117, 117, 0.22);
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.Icon .IconBox {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.Icon .OnlineInd {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #15ff00;
+  box-shadow: 0 0 10px #15ff00;
+}
+.Icon img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.Icon img.default {
+  height: 24px;
+  width: 24px;
+}
+
+/*# sourceMappingURL=Avatar.css.map */

@@ -1,0 +1,36 @@
+.ToggleWithIcon
+    position: relative
+    display: flex
+    align-items: center
+    border-width: 1px
+    border-style: solid
+    border-radius: 16px
+    box-sizing: border-box
+    padding: 2px
+    cursor: pointer
+
+    div
+        display: flex
+        position: absolute
+        justify-content: center
+        align-items: center
+        width: 44px
+        height: 44px
+        border-width: 1px
+        border-style: solid
+        border-radius: 13px
+        box-sizing: border-box
+
+        img
+            width: 24px
+            height: 24px
+
+    &.vertical
+        flex-direction: column
+        height: 75px
+        width: 50px
+
+    &.horizontal
+        flex-direction: row
+        height: 50px
+        width: 75px

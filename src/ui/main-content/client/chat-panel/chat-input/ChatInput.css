@@ -1,0 +1,93 @@
+.ChatInput {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  margin: 0 20px 0 10px;
+  width: calc(100% - 30px);
+  max-width: 100%;
+  display: grid;
+  grid-template-areas: "inputBox files media plane";
+  grid-template-columns: 1fr auto auto auto;
+}
+.ChatInput .InputBox {
+  grid-area: inputBox;
+  border-radius: 26px;
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  grid-template-rows: auto auto;
+  grid-template-columns: 100%;
+  overflow-x: hidden;
+}
+.ChatInput .InputBox .documentsBox {
+  margin: 10px 0 0 0;
+  grid-area: docs;
+  max-width: 100%;
+  display: flex;
+  overflow: hidden;
+  grid-auto-rows: auto;
+  box-sizing: border-box;
+}
+.ChatInput .InputBox .documentsBox > div {
+  padding: 0 10px;
+  display: flex;
+}
+.ChatInput .InputBox .documentsBox::-webkit-scrollbar {
+  display: none;
+}
+.ChatInput .InputBox .documentsBox .Document {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.ChatInput .InputBox .documentsBox .Document:last-child {
+  margin: 0;
+}
+.ChatInput .InputBox .InputText {
+  margin: 0 10px 10px 10px;
+  grid-area: input;
+  width: calc(100% - 20px);
+}
+.ChatInput > .ButtonWithIcon {
+  margin: auto 0 10px 14px;
+}
+.ChatInput .Files {
+  grid-area: files;
+  margin-left: 10px;
+}
+.ChatInput .Media {
+  grid-area: media;
+}
+.ChatInput .Plane {
+  grid-area: plane;
+}
+
+@media all and (max-width: 380px) {
+  .ChatInput {
+    position: fixed;
+  }
+  .ChatInput .InputBox {
+    border-radius: 21px;
+  }
+  .ChatInput .InputBox .documentsBox {
+    margin: 5px 0 0 0;
+  }
+  .ChatInput .InputBox .documentsBox > div {
+    padding: 0 5px;
+  }
+  .ChatInput .InputBox .documentsBox .Document {
+    margin-bottom: 5px;
+  }
+  .ChatInput .InputBox .InputText {
+    margin: 0 5px 5px 5px;
+    width: calc(100% - 10px);
+  }
+  .ChatInput > .ButtonWithIcon {
+    margin: auto 0 5px 7px;
+  }
+}
+
+/*# sourceMappingURL=ChatInput.css.map */

@@ -1,0 +1,9 @@
+.LoaderSimple {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=LoaderSimple.css.map */

@@ -1,0 +1,26 @@
+.Accept
+  width: calc(100% - 20px)
+  box-sizing: border-box
+  padding: 20px 30px
+  border-radius: 16px
+  border-width: 1px
+  border-style: solid
+  backdrop-filter: blur(20px)
+  max-width: 400px
+  display: grid
+  grid-template-areas: "q q" "cancel accept"
+  grid-gap: 15px
+  font-weight: 500
+  grid-template-columns: 1fr 1fr
+
+  h2
+    grid-area: q
+    display: flex
+    font-weight: 500 !important
+    margin: 20px auto
+
+  .AccentButton
+    grid-area: cancel
+
+  .SimpleButton
+    grid-area: accept

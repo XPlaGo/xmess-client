@@ -1,0 +1,11 @@
+.InfoSection {
+  grid-area: infoSection;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2px;
+  height: 100vh;
+  width: auto;
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=InfoSection.css.map */

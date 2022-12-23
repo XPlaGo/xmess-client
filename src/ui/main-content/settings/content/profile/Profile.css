@@ -1,0 +1,33 @@
+.ProfileSettings {
+  margin: auto;
+  display: grid;
+  grid-template-areas: "icon username" "icon description" "logout logout";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto auto;
+  width: calc(100% - 20px);
+  box-sizing: border-box;
+  max-width: 400px;
+  grid-column-gap: 20px;
+  border-radius: 16px;
+  padding: 20px 30px;
+  border-width: 1px;
+  border-style: solid;
+}
+.ProfileSettings .Icon {
+  grid-area: icon;
+}
+.ProfileSettings h2 {
+  grid-area: username;
+  margin: auto 0 2px 0;
+}
+.ProfileSettings p {
+  grid-area: description;
+  margin: 2px 0 auto 0;
+}
+.ProfileSettings button {
+  margin: 20px auto;
+  grid-area: logout;
+  max-width: 200px;
+}
+
+/*# sourceMappingURL=Profile.css.map */

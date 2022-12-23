@@ -1,0 +1,25 @@
+.ButtonSimple {
+  padding: 0 20px;
+  font: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  cursor: pointer;
+}
+
+@media all and (max-width: 380px) {
+  .ButtonSimple {
+    font-size: 18px;
+    padding: 0 20px;
+    height: 46px !important;
+  }
+}
+
+/*# sourceMappingURL=ButtonSimple.css.map */

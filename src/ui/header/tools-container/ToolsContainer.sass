@@ -1,0 +1,36 @@
+.ToolsContainer
+    padding: 20px
+    display: flex
+    border-style: solid
+    box-sizing: border-box
+
+    &.pc
+        width: 90px
+        height: 180px
+        flex-direction: column
+        border-width: 1px 1px 0 0
+
+    &.tablet
+        width: 180px
+        height: 90px
+        flex-direction: row
+        justify-content: center
+        border-width: 1px
+        border-radius: 0 16px 16px 0
+
+    &.mobile
+        padding: 15px
+        width: 80px
+        height: 80px
+        flex-direction: row
+        justify-content: center
+        border-width: 1px
+        border-radius: 0 31px 31px 0
+
+@media all and (max-width: 380px)
+    .ToolsContainer
+        padding: 10px !important
+        height: 68px !important
+        width: auto !important
+        border-radius: 0 22px 22px 0 !important
+

@@ -1,0 +1,253 @@
+.ChatsPanel
+  grid-area: chats
+  height: 100%
+  width: 100%
+  box-sizing: border-box
+  position: relative
+
+  .LoaderSimple
+    margin: 20px auto !important
+
+  &.closed.tablet
+    >.box
+      //grid-template-rows: 100px 1fr
+      .header
+        display: flex
+        align-items: center
+        justify-content: center
+
+      .arrow
+        margin: auto
+
+  &.tablet, &.mobile
+
+    ul
+      margin-bottom: 110px !important
+
+  .box
+    display: grid
+    grid-template-areas: "header" "list"
+    grid-template-rows: 162px 1fr
+    grid-template-columns: 100%
+    height: 100%
+    width: 100%
+    position: relative
+
+    .header
+      grid-area: header
+      border-style: solid
+      border-width: 1px 0 0 0
+      margin-bottom: 2px
+      display: grid
+      width: 100%
+      grid-template-areas: "h2 arrow" "search search"
+      grid-template-columns: 1fr auto
+      grid-template-rows: auto auto
+
+      h2
+        grid-area: h2
+        margin: 20px 30px
+        font-size: 40px
+        font-weight: 500
+
+      .arrow
+        grid-area: arrow
+        width: 24px
+        height: 24px
+        margin: auto 10px
+
+      .searchBox
+        grid-area: search
+        display: grid
+        flex-direction: row
+        padding: 10px
+        box-sizing: border-box
+        grid-template-areas: "input button"
+        grid-template-columns: 1fr 60px
+
+        button
+          grid-area: button
+          margin-left: 10px
+
+        input
+          grid-area: input
+
+    .list
+      grid-area: list
+      border-style: solid
+      border-width: 1px 0 0 0
+      overflow-y: scroll
+      height: 100%
+      width: 100%
+      box-sizing: border-box
+
+      &::-webkit-scrollbar
+        display: none
+
+      .LoaderSimple
+        margin: auto
+
+      ul
+        display: flex
+        flex-direction: column
+        list-style: none
+        justify-content: center
+        align-items: center
+        padding: 0
+        margin: 0
+        width: 100%
+        position: relative
+        min-height: 100px
+
+        >span
+          position: absolute
+          //margin: 50% auto
+
+.ChatItem
+  display: flex
+  padding: 5px
+  box-sizing: border-box
+  border-width: 1px 0 0 0
+  border-style: solid
+  cursor: pointer
+  width: 100%
+
+  .chatItemBox
+    width: 100%
+    padding: 15px
+    box-sizing: border-box
+    border-radius: 10px
+    border-width: 1px
+    border-style: solid
+    display: grid
+    grid-template-areas: "icon title time indicator" "icon last time indicator"
+    grid-template-columns: 60px 1fr auto auto
+    backdrop-filter: blur(10px)
+    margin: 0
+
+    .icon
+      grid-area: icon
+      height: 60px
+      width: 60px
+      background: rgba(255, 255, 255, 0.1)
+      border-radius: 50%
+      box-sizing: border-box
+      overflow: hidden
+      background-size: contain
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
+
+      img
+        position: absolute
+        height: 100%
+        width: 100%
+        object-fit: cover
+
+        &.default
+          height: 24px
+          width: 24px
+
+    .title
+      margin: auto 0 2px 24px
+      grid-area: title
+      font-weight: 500
+      font-size: 20px
+
+    .time
+      grid-area: time
+      margin: auto 5px
+
+    .last
+      margin: 2px 0 auto 24px
+      grid-area: last
+      font-size: 14px
+
+    .indicator
+      margin: auto 5px
+      grid-area: indicator
+      display: flex
+      width: 10px
+      height: 10px
+      border-radius: 50%
+
+.GlobalSearch
+  display: flex
+  align-items: center
+  flex-direction: column
+  box-sizing: border-box
+
+  >p
+    font-size: 20px
+    margin: 15px auto 5px
+
+  ul
+    padding: 0
+    margin: 0
+    width: 100%
+
+  .SearchUser
+    display: grid
+    grid-template-areas: "icon username dots"
+    grid-template-columns: auto 1fr auto
+    padding: 20px
+    border-width: 1px 0 0 0
+    border-style: solid
+    grid-column-gap: 24px
+    box-sizing: border-box
+
+    .Icon
+      margin: auto 0
+      grid-area: icon
+
+    p
+      font-size: 20px
+      margin: auto 0
+      grid-area: username
+
+    span
+      font-size: 14px
+      margin: 2px 0 auto 0
+      grid-area: status
+
+    .ButtonThird, .Check
+      margin: auto 0
+      grid-area: dots
+
+@media all and (max-width: 380px)
+  .ChatsPanel
+
+    .box
+      grid-template-rows: auto 1fr
+
+      .header
+
+        h2
+          font-size: 30px
+          margin: 10px 20px
+
+        .searchBox
+          padding-top: 0
+
+  .ChatItem, .SearchUser
+    padding: 5px
+    .chatItemBox, .box
+      padding: 10px
+
+      .Icon
+        width: 50px !important
+        height: 50px !important
+
+      .title
+        font-size: 18px
+        margin-left: 12px
+
+      .last
+        font-size: 14px
+        margin-left: 12px
+
+      .time
+        font-size: 14px
+
+

@@ -1,0 +1,15 @@
+.ContentSection {
+  grid-area: contentSection;
+  height: 100vh;
+  width: 100%;
+}
+.ContentSection.mobile {
+  grid-area: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+/*# sourceMappingURL=ContentSection.css.map */

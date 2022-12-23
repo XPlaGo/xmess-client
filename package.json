@@ -2,8 +2,10 @@
   "name": "xmess-client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://xmess-gateway-service.jelastic.regruhosting.ru",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
+    "@stomp/stompjs": "^6.1.2",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^14.2.0",
@@ -11,12 +13,32 @@
     "@types/node": "^17.0.41",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
+    "@types/react-speech-recognition": "^3.9.0",
+    "axios": "^0.27.2",
+    "az": "^0.2.3",
+    "class-transformer": "^0.5.1",
+    "framer-motion": "^6.3.11",
+    "http-proxy-middleware": "^2.0.6",
+    "js-file-download": "^0.4.12",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-hook-inview": "^4.5.0",
+    "react-horizontal-scrolling-menu": "^3.1.0",
     "react-redux": "^8.0.2",
+    "react-router": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.8.7",
+    "react-speech-recognition": "^3.9.1",
+    "react-stomp": "^5.1.0",
+    "react-stomp-hooks": "^2.1.0",
+    "save": "^2.5.0",
+    "socket.io": "^4.5.1",
+    "sockjs": "^0.3.24",
+    "sockjs-client": "^1.6.1",
+    "stompjs": "^2.3.3",
     "typescript": "^4.7.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "websocket": "^1.0.34"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,5 +63,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-scroll": "^1.8.3",
+    "@types/sockjs": "^0.3.33"
   }
 }

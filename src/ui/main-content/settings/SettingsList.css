@@ -1,0 +1,163 @@
+.SettingsList {
+  grid-area: chats;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+.SettingsList .LoaderSimple {
+  margin: 20px auto !important;
+}
+.SettingsList.closed.tablet > .box .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.SettingsList.closed.tablet > .box .arrow {
+  margin: auto;
+}
+.SettingsList.tablet ul, .SettingsList.mobile ul {
+  margin-bottom: 110px !important;
+}
+.SettingsList .box {
+  display: grid;
+  grid-template-areas: "header" "list";
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 100%;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.SettingsList .box .header {
+  grid-area: header;
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  margin-bottom: 2px;
+  display: grid;
+  width: 100%;
+  grid-template-areas: "h2 arrow" "search search";
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+}
+.SettingsList .box .header button {
+  margin: auto 10px;
+}
+.SettingsList .box .header h2 {
+  grid-area: h2;
+  margin: 20px 30px;
+  font-size: 40px;
+  font-weight: 500;
+}
+.SettingsList .box .header .arrow {
+  grid-area: arrow;
+  width: 24px;
+  height: 24px;
+  margin: auto 10px;
+}
+.SettingsList .box .header .searchBox {
+  grid-area: search;
+  display: grid;
+  flex-direction: row;
+  padding: 10px;
+  box-sizing: border-box;
+  grid-template-areas: "input button";
+  grid-template-columns: 1fr 60px;
+}
+.SettingsList .box .header .searchBox button {
+  grid-area: button;
+  margin-left: 10px;
+}
+.SettingsList .box .header .searchBox input {
+  grid-area: input;
+}
+.SettingsList .box .list {
+  grid-area: list;
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.SettingsList .box .list::-webkit-scrollbar {
+  display: none;
+}
+.SettingsList .box .list .LoaderSimple {
+  margin: auto;
+}
+.SettingsList .box .list ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.SettingsSectionLink {
+  display: flex;
+  padding: 5px;
+  box-sizing: border-box;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  cursor: pointer;
+  width: 100%;
+}
+.SettingsSectionLink .sectionListBox {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  display: flex;
+}
+.SettingsSectionLink .sectionListBox img {
+  margin: auto 20px auto 0;
+  height: 24px;
+  width: 24px;
+}
+.SettingsSectionLink .sectionListBox p {
+  font-weight: 400;
+  font-size: 18px;
+  margin: 0;
+}
+
+@media all and (max-width: 380px) {
+  .SettingsList .box {
+    grid-template-rows: auto 1fr;
+  }
+  .SettingsList .box .header h2 {
+    font-size: 30px;
+    margin: 10px 20px;
+  }
+  .SettingsList .box .header .searchBox {
+    padding-top: 0;
+  }
+
+  .ChatItem {
+    padding: 5px;
+  }
+  .ChatItem .chatItemBox {
+    padding: 10px;
+  }
+  .ChatItem .chatItemBox .Icon {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .ChatItem .chatItemBox .title {
+    font-size: 18px;
+    margin-left: 12px;
+  }
+  .ChatItem .chatItemBox .last {
+    font-size: 14px;
+    margin-left: 12px;
+  }
+  .ChatItem .chatItemBox .time {
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=SettingsList.css.map */

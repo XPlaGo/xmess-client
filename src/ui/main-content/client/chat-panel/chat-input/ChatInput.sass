@@ -1,0 +1,92 @@
+.ChatInput
+  //grid-area: input
+  position: absolute
+  bottom: 10px
+  left: 0
+  margin: 0 20px 0 10px
+  width: calc(100% - 30px)
+  max-width: 100%
+  display: grid
+  grid-template-areas: "inputBox files media plane"
+  grid-template-columns: 1fr auto auto auto
+
+  .InputBox
+    grid-area: inputBox
+    border-radius: 26px
+    border-style: solid
+    border-width: 1px
+    box-sizing: border-box
+    backdrop-filter: blur(20px)
+    display: flex
+    flex-direction: column
+    width: 100%
+    //padding: 10px
+    grid-template-rows: auto auto
+    grid-template-columns: 100%
+    overflow-x: hidden
+
+    .documentsBox
+      margin: 10px 0 0 0
+      grid-area: docs
+      max-width: 100%
+      display: flex
+      overflow: hidden
+      grid-auto-rows: auto
+      //border-radius: 16px
+      box-sizing: border-box
+
+      >div
+        padding: 0 10px
+        display: flex
+
+      &::-webkit-scrollbar
+        display: none
+
+      .Document
+        margin-bottom: 10px
+        margin-right: 10px
+
+        &:last-child
+          margin: 0
+
+    .InputText
+      margin: 0 10px 10px 10px
+      grid-area: input
+      width: calc(100% - 20px)
+
+  >.ButtonWithIcon
+    margin: auto 0 10px 14px
+
+  .Files
+    grid-area: files
+    margin-left: 10px
+
+  .Media
+    grid-area: media
+
+  .Plane
+    grid-area: plane
+
+@media all and (max-width: 380px)
+  .ChatInput
+    position: fixed
+
+    .InputBox
+      //padding: 5px
+      border-radius: 21px
+
+      .documentsBox
+        margin: 5px 0 0 0
+
+        >div
+          padding: 0 5px
+
+        .Document
+          margin-bottom: 5px
+
+      .InputText
+        margin: 0 5px 5px 5px
+        width: calc(100% - 10px)
+
+    >.ButtonWithIcon
+      margin: auto 0 5px 7px

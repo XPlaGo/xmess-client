@@ -1,0 +1,53 @@
+.RightPanel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+.RightPanel::-webkit-scrollbar {
+  display: none;
+}
+.RightPanel .container {
+  margin-bottom: 22px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+  border-width: 1px;
+  border-style: solid;
+  width: 100%;
+  max-width: 350px;
+  padding: 32px;
+  box-sizing: border-box;
+}
+.RightPanel .container p {
+  font-size: 20px;
+  margin: 0;
+}
+.RightPanel .container a {
+  text-align: center;
+  font-size: 32px;
+  margin: 15px 0;
+}
+.RightPanel div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.RightPanel div p {
+  font-size: 20px;
+}
+.RightPanel div button {
+  width: 100%;
+  max-width: 200px;
+}
+
+/*# sourceMappingURL=RightPanel.css.map */

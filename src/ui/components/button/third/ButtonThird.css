@@ -1,0 +1,26 @@
+.ButtonThird {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  border-radius: 16px;
+  border: 0;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(20px);
+}
+.ButtonThird img {
+  width: 24px;
+  height: 24px;
+}
+
+@media all and (max-width: 380px) {
+  .ButtonThird {
+    font-size: 18px;
+    padding: 0 20px;
+    height: 46px !important;
+  }
+}
+
+/*# sourceMappingURL=ButtonThird.css.map */

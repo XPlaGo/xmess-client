@@ -1,0 +1,24 @@
+#App
+
+    font-family: "Inter", sans-serif !important
+    height: 100vh
+    width: 100vw
+    outline: none !important
+    user-select: none
+    overflow: hidden
+    font-weight: 500 !important
+
+    &.pc
+        display: grid
+        grid-template-areas: "MainHeader MainContent"
+        grid-template-columns: 90px 1fr
+
+    &.tablet
+        display: flex
+
+    &.mobile
+        display: flex
+        flex-direction: column
+
+    input::-ms-reveal, input::-ms-clear
+        display: none

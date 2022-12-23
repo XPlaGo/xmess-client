@@ -1,58 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
+import { motion } from "framer-motion";
+import {useAppDispatch, useAppSelector} from './app/hooks';
+import { selectTheme, Theme } from './features/theme/themeSlice';
+import Header from './ui/header/Header';
+import MainContent from './ui/main-content/MainContent';
+import useUIType from "./ui/tools/hooks/useUIType";
+import Assistant from "./ui/components/assistant/Assistant";
+import {selectChatsPanelState, selectContentState} from "./features/navigation/navigationSlice";
+import {selectModalState} from "./features/modal/modalSlice";
+import Modal from "./ui/components/modal/Modal";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
+    const theme: Theme = useAppSelector(selectTheme);
+    const chatsState = useAppSelector(selectChatsPanelState);
+    const UIType = useUIType()
+    const modalState = useAppSelector(selectModalState);
+
+    return (
+        <motion.div id="App" className={UIType} animate={{background: theme.colors["appBackground"]}}>
+            { (UIType === "pc" || chatsState === "opened") &&
+                <Header/>
+            }
+            <MainContent/>
+            { modalState && <Modal/>}
+        </motion.div>
+    );
 }
 
 export default App;

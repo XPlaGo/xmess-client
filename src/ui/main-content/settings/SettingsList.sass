@@ -1,0 +1,167 @@
+.SettingsList
+  grid-area: chats
+  height: 100%
+  width: 100%
+  box-sizing: border-box
+  position: relative
+
+  .LoaderSimple
+    margin: 20px auto !important
+
+  &.closed.tablet
+    >.box
+      //grid-template-rows: 100px 1fr
+      .header
+        display: flex
+        align-items: center
+        justify-content: center
+
+      .arrow
+        margin: auto
+
+  &.tablet, &.mobile
+
+    ul
+      margin-bottom: 110px !important
+
+  .box
+    display: grid
+    grid-template-areas: "header" "list"
+    grid-template-rows: auto 1fr
+    grid-template-columns: 100%
+    height: 100%
+    width: 100%
+    position: relative
+
+    .header
+      grid-area: header
+      border-style: solid
+      border-width: 1px 0 0 0
+      margin-bottom: 2px
+      display: grid
+      width: 100%
+      grid-template-areas: "h2 arrow" "search search"
+      grid-template-columns: 1fr auto
+      grid-template-rows: auto auto
+
+      button
+        margin: auto 10px
+
+      h2
+        grid-area: h2
+        margin: 20px 30px
+        font-size: 40px
+        font-weight: 500
+
+      .arrow
+        grid-area: arrow
+        width: 24px
+        height: 24px
+        margin: auto 10px
+
+      .searchBox
+        grid-area: search
+        display: grid
+        flex-direction: row
+        padding: 10px
+        box-sizing: border-box
+        grid-template-areas: "input button"
+        grid-template-columns: 1fr 60px
+
+        button
+          grid-area: button
+          margin-left: 10px
+
+        input
+          grid-area: input
+
+    .list
+      grid-area: list
+      border-style: solid
+      border-width: 1px 0 0 0
+      overflow-y: scroll
+      height: 100%
+      width: 100%
+      box-sizing: border-box
+
+      &::-webkit-scrollbar
+        display: none
+
+      .LoaderSimple
+        margin: auto
+
+      ul
+        display: flex
+        flex-direction: column
+        align-items: center
+        list-style: none
+        padding: 0
+        margin: 0
+        width: 100%
+        height: 100%
+
+.SettingsSectionLink
+  display: flex
+  padding: 5px
+  box-sizing: border-box
+  border-width: 1px 0 0 0
+  border-style: solid
+  cursor: pointer
+  width: 100%
+
+  .sectionListBox
+    width: 100%
+    padding: 15px
+    box-sizing: border-box
+    border-radius: 10px
+    border-width: 1px
+    border-style: solid
+    display: flex
+
+    img
+      margin: auto 20px auto 0
+      height: 24px
+      width: 24px
+
+    p
+      font-weight: 400
+      font-size: 18px
+      margin: 0
+
+@media all and (max-width: 380px)
+  .SettingsList
+
+    .box
+      grid-template-rows: auto 1fr
+
+      .header
+
+        h2
+          font-size: 30px
+          margin: 10px 20px
+
+        .searchBox
+          padding-top: 0
+
+  .ChatItem
+    padding: 5px
+    .chatItemBox
+      padding: 10px
+
+      .Icon
+        width: 50px !important
+        height: 50px !important
+
+      .title
+        font-size: 18px
+        margin-left: 12px
+
+      .last
+        font-size: 14px
+        margin-left: 12px
+
+      .time
+        font-size: 14px
+
+
+

@@ -1,0 +1,75 @@
+.ChatHeader {
+  grid-area: header;
+  display: grid;
+  grid-template-areas: "back info control";
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  padding: 15px 0;
+  margin: 0 20px;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+}
+.ChatHeader > .ButtonThird {
+  margin-right: 30px;
+}
+.ChatHeader .ChatInfo {
+  grid-area: info;
+  display: grid;
+  grid-template-areas: "icon title";
+  grid-column-gap: 24px;
+  grid-template-columns: auto auto;
+  margin-right: 30px;
+}
+.ChatHeader .ChatInfo .ChatTitle {
+  grid-area: title;
+  margin: auto 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+.ChatHeader .ChatInfo .ChatStatus {
+  grid-area: status;
+  margin: 2px 0 auto 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+.ChatHeader .ChatControl {
+  grid-area: control;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+.ChatHeader .ChatControl input {
+  width: 100%;
+  max-width: 300px;
+  opacity: 0.3;
+}
+.ChatHeader .ChatControl .ButtonWithIcon {
+  margin-left: 13px;
+}
+
+@media all and (max-width: 380px) {
+  .ChatHeader {
+    padding: 10px 0;
+    margin: 0 10px;
+  }
+  .ChatHeader > .ButtonThird {
+    margin-right: 10px;
+  }
+  .ChatHeader .ChatInfo {
+    margin-right: 15px;
+    grid-column-gap: 10px;
+  }
+  .ChatHeader .ChatInfo .Icon {
+    height: 50px !important;
+    width: 50px !important;
+  }
+  .ChatHeader .ChatInfo .ChatTitle {
+    font-size: 18px;
+  }
+  .ChatHeader .ChatInfo .ChatStatus {
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=ChatHeader.css.map */

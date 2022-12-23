@@ -1,0 +1,127 @@
+.InfoPanel
+  max-width: 500px
+  width: 30vw
+  display: grid
+  grid-template-rows: auto 1fr
+  height: 100%
+
+  .Info
+    display: grid
+    grid-template-areas: "icon title" "icon description" "calls calls"
+    grid-template-columns: auto 1fr
+    padding: 40px 30px
+    border-width: 1px 0
+    border-style: solid
+    position: relative
+
+    h3
+      font-size: 30px
+      font-weight: 500
+      grid-area: title
+      margin: auto 0 7px 23px
+
+    p
+      grid-area: description
+      margin: 7px 0 auto 23px
+
+    .CallsBox
+      grid-area: calls
+      margin: 30px 0 20px 0
+      display: grid
+      width: 100%
+      grid-template-columns: 1fr 1fr
+      grid-column-gap: 25px
+
+      button
+        width: 100%
+
+  .ChatMembers
+    margin-top: 2px
+    border-width: 1px 0 0 0
+    border-style: solid
+    padding: 20px 30px
+
+    h3
+      font-weight: 500
+      font-size: 22px
+
+    ul
+      list-style: none
+      padding: 0
+      margin: 0
+
+    .ChatMember
+      display: grid
+      grid-template-areas: "icon username dots"
+      grid-template-columns: auto 1fr auto
+      padding: 20px
+      border-width: 1px 0 0 0
+      border-style: solid
+      grid-column-gap: 24px
+
+      .Icon
+        margin: auto 0
+        grid-area: icon
+
+      p
+        font-size: 20px
+        margin: auto 0
+        grid-area: username
+
+      span
+        font-size: 14px
+        margin: 2px 0 auto 0
+        grid-area: status
+
+      .ButtonThird
+        margin: auto 0
+        grid-area: dots
+
+  .ChatDocuments
+    margin-top: 2px
+    border-width: 1px 0 0 0
+    border-style: solid
+    padding: 20px 30px
+
+    h3
+      margin: 0
+      font-weight: 500
+      font-size: 22px
+
+    .DocumentsList
+      margin: 20px 0 0 0
+      display: grid
+      grid-template-columns: repeat(100000, auto)
+      width: 100%
+      overflow-x: hidden
+      border-radius: 16px
+
+      >div
+        display: flex
+
+      &::-webkit-scrollbar
+        display: none
+
+      .Document
+        margin-right: 10px
+
+  .ChatBlock
+    margin-top: 2px
+    border-width: 1px 0 0 0
+    border-style: solid
+    padding: 20px 30px
+    display: flex
+    justify-content: center
+    align-items: center
+
+    &:last-child
+      height: 100%
+      button
+        margin-bottom: auto
+
+
+  .InfoOptScroll
+    overflow-y: scroll
+
+    &::-webkit-scrollbar
+      display: none

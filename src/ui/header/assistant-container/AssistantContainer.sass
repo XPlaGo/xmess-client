@@ -1,0 +1,32 @@
+.AssistantContainer
+    border-style: solid
+    box-sizing: border-box
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+
+    &.pc
+        margin-bottom: 2px
+        width: 90px
+        height: auto
+        border-width: 1px 1px 1px 0
+
+    &.tablet
+        margin-right: 2px
+        width: auto
+        height: 90px
+        border-width: 1px
+
+    &.mobile
+        padding: 31px
+        margin-right: 2px
+        width: auto
+        height: 80px
+        border-width: 1px
+
+@media all and (max-width: 380px)
+    .AssistantContainer
+        padding: 10px !important
+        height: 68px !important
+        width: auto !important

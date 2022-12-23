@@ -1,0 +1,151 @@
+.ChatMessage
+  margin-top: 15px
+  display: grid
+
+  .readInd
+    grid-area: ind
+    width: 10px
+    height: 10px
+    background: #0099ff
+    border-radius: 50%
+    margin: auto 10px
+
+  .documentsBox
+    grid-area: documents
+    display: grid
+    grid-template-columns: repeat(1000, auto)
+    overflow-x: scroll
+    border-radius: 16px
+    margin: 5px 0 5px 0
+    max-width: min(100%, 450px)
+    //width: 100%
+
+    >div
+      display: flex
+
+    .Document
+      margin-right: 5px
+
+      &:last-child
+        margin-right: 0
+
+    &::-webkit-scrollbar
+      display: none
+
+  .sender
+    margin: 10px 0
+    display: grid
+    grid-area: sender
+    grid-template-areas: "icon username"
+    grid-template-columns: auto 1fr
+
+    .Icon
+      margin: auto 0 auto 0
+      grid-area: icon
+
+    .senderUsername
+      font-size: 16px
+      margin: auto auto auto 15px
+      grid-area: username
+
+  .ButtonThird
+    grid-area: button
+    margin: auto 10px
+
+  .time
+    grid-area: time
+    margin: auto 15px
+    font-size: 14px
+
+  .ChatMessageBox
+    grid-area: box
+    padding: 15px 25px
+    border-style: solid
+    max-width: 450px
+
+    .textContent
+      margin: 0
+      font-size: 16px
+      white-space: unset
+      word-break: break-word
+
+  &.info
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 10px 0
+
+  &.other
+    grid-template-areas: "sender sender sender sender" "documents none none none" "box ind button time"
+    grid-template-columns: auto auto auto 1fr
+
+    .documentsBox
+      margin-right: auto
+
+    .ChatMessageBox
+      margin-right: auto
+      border-width: 1px
+      border-radius: 16px 16px 16px 5px
+
+    .time
+      margin-right: auto !important
+
+  &.other.middle
+    margin-top: 5px
+    .ChatMessageBox
+      border-radius: 5px 16px 16px 5px
+
+  &.other.end
+    margin-top: 5px
+    .ChatMessageBox
+      border-radius: 5px 16px 16px 16px
+
+  &.self
+    grid-template-areas: "sender sender sender sender" "none none none documents" "time button ind box"
+    grid-template-columns: 1fr auto auto auto
+
+    .documentsBox
+      margin-left: auto
+      touch-action: none
+
+    .ChatMessageBox
+      margin-left: auto
+      border-width: 0
+      border-radius: 16px 16px 5px 16px
+      box-shadow: 0 0 20px rgba(0, 153, 255, 0.4)
+
+    .time
+      margin-left: auto
+
+  &.self.middle
+    margin-top: 5px
+    .ChatMessageBox
+      border-radius: 16px 5px 5px 16px
+
+  &.self.end
+    margin-top: 5px
+    .ChatMessageBox
+      border-radius: 16px 5px 16px 16px
+
+
+@media all and (max-width: 380px)
+  .ChatMessage
+
+    &.other
+      grid-template-areas: "sender sender sender sender" "documents documents documents documents" "box ind button time"
+      box-sizing: border-box
+      padding-right: 20px
+
+    &.self
+      grid-template-areas: "sender sender sender sender" "documents documents documents documents" "time button ind box"
+      box-sizing: border-box
+      padding-left: 20px
+
+    .ChatMessageBox
+      padding: 15px 20px
+
+    .documentsBox
+      margin: 5px 0 3px 0
+
+      .Document
+        margin-right: 5px

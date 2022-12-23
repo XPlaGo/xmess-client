@@ -1,0 +1,250 @@
+.ChatsPanel {
+  grid-area: chats;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+.ChatsPanel .LoaderSimple {
+  margin: 20px auto !important;
+}
+.ChatsPanel.closed.tablet > .box .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ChatsPanel.closed.tablet > .box .arrow {
+  margin: auto;
+}
+.ChatsPanel.tablet ul, .ChatsPanel.mobile ul {
+  margin-bottom: 110px !important;
+}
+.ChatsPanel .box {
+  display: grid;
+  grid-template-areas: "header" "list";
+  grid-template-rows: 162px 1fr;
+  grid-template-columns: 100%;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.ChatsPanel .box .header {
+  grid-area: header;
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  margin-bottom: 2px;
+  display: grid;
+  width: 100%;
+  grid-template-areas: "h2 arrow" "search search";
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+}
+.ChatsPanel .box .header h2 {
+  grid-area: h2;
+  margin: 20px 30px;
+  font-size: 40px;
+  font-weight: 500;
+}
+.ChatsPanel .box .header .arrow {
+  grid-area: arrow;
+  width: 24px;
+  height: 24px;
+  margin: auto 10px;
+}
+.ChatsPanel .box .header .searchBox {
+  grid-area: search;
+  display: grid;
+  flex-direction: row;
+  padding: 10px;
+  box-sizing: border-box;
+  grid-template-areas: "input button";
+  grid-template-columns: 1fr 60px;
+}
+.ChatsPanel .box .header .searchBox button {
+  grid-area: button;
+  margin-left: 10px;
+}
+.ChatsPanel .box .header .searchBox input {
+  grid-area: input;
+}
+.ChatsPanel .box .list {
+  grid-area: list;
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.ChatsPanel .box .list::-webkit-scrollbar {
+  display: none;
+}
+.ChatsPanel .box .list .LoaderSimple {
+  margin: auto;
+}
+.ChatsPanel .box .list ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  min-height: 100px;
+}
+.ChatsPanel .box .list ul > span {
+  position: absolute;
+}
+
+.ChatItem {
+  display: flex;
+  padding: 5px;
+  box-sizing: border-box;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  cursor: pointer;
+  width: 100%;
+}
+.ChatItem .chatItemBox {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  display: grid;
+  grid-template-areas: "icon title time indicator" "icon last time indicator";
+  grid-template-columns: 60px 1fr auto auto;
+  backdrop-filter: blur(10px);
+  margin: 0;
+}
+.ChatItem .chatItemBox .icon {
+  grid-area: icon;
+  height: 60px;
+  width: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.ChatItem .chatItemBox .icon img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.ChatItem .chatItemBox .icon img.default {
+  height: 24px;
+  width: 24px;
+}
+.ChatItem .chatItemBox .title {
+  margin: auto 0 2px 24px;
+  grid-area: title;
+  font-weight: 500;
+  font-size: 20px;
+}
+.ChatItem .chatItemBox .time {
+  grid-area: time;
+  margin: auto 5px;
+}
+.ChatItem .chatItemBox .last {
+  margin: 2px 0 auto 24px;
+  grid-area: last;
+  font-size: 14px;
+}
+.ChatItem .chatItemBox .indicator {
+  margin: auto 5px;
+  grid-area: indicator;
+  display: flex;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.GlobalSearch {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.GlobalSearch > p {
+  font-size: 20px;
+  margin: 15px auto 5px;
+}
+.GlobalSearch ul {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.GlobalSearch .SearchUser {
+  display: grid;
+  grid-template-areas: "icon username dots";
+  grid-template-columns: auto 1fr auto;
+  padding: 20px;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  grid-column-gap: 24px;
+  box-sizing: border-box;
+}
+.GlobalSearch .SearchUser .Icon {
+  margin: auto 0;
+  grid-area: icon;
+}
+.GlobalSearch .SearchUser p {
+  font-size: 20px;
+  margin: auto 0;
+  grid-area: username;
+}
+.GlobalSearch .SearchUser span {
+  font-size: 14px;
+  margin: 2px 0 auto 0;
+  grid-area: status;
+}
+.GlobalSearch .SearchUser .ButtonThird, .GlobalSearch .SearchUser .Check {
+  margin: auto 0;
+  grid-area: dots;
+}
+
+@media all and (max-width: 380px) {
+  .ChatsPanel .box {
+    grid-template-rows: auto 1fr;
+  }
+  .ChatsPanel .box .header h2 {
+    font-size: 30px;
+    margin: 10px 20px;
+  }
+  .ChatsPanel .box .header .searchBox {
+    padding-top: 0;
+  }
+
+  .ChatItem, .SearchUser {
+    padding: 5px;
+  }
+  .ChatItem .chatItemBox, .ChatItem .box, .SearchUser .chatItemBox, .SearchUser .box {
+    padding: 10px;
+  }
+  .ChatItem .chatItemBox .Icon, .ChatItem .box .Icon, .SearchUser .chatItemBox .Icon, .SearchUser .box .Icon {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .ChatItem .chatItemBox .title, .ChatItem .box .title, .SearchUser .chatItemBox .title, .SearchUser .box .title {
+    font-size: 18px;
+    margin-left: 12px;
+  }
+  .ChatItem .chatItemBox .last, .ChatItem .box .last, .SearchUser .chatItemBox .last, .SearchUser .box .last {
+    font-size: 14px;
+    margin-left: 12px;
+  }
+  .ChatItem .chatItemBox .time, .ChatItem .box .time, .SearchUser .chatItemBox .time, .SearchUser .box .time {
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=ChatsPanel.css.map */

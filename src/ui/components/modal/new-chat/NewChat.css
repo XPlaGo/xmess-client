@@ -1,0 +1,135 @@
+.NewChat {
+  padding: 20px 30px;
+  border-radius: 16px;
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  width: calc(100% - 20px);
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  backdrop-filter: blur(20px);
+  height: calc(100% - 40px);
+}
+.NewChat .dialogue, .NewChat .group {
+  padding: 10px 0;
+  border-width: 1px 0 0 0;
+  width: 100%;
+  overflow-y: scroll;
+  border-style: solid;
+  margin: 10px 0;
+  height: 100%;
+}
+.NewChat .dialogue::-webkit-scrollbar, .NewChat .group::-webkit-scrollbar {
+  display: none;
+}
+.NewChat .dialogue input, .NewChat .group input {
+  margin: 5px 0;
+  width: 100%;
+}
+.NewChat .dialogue input:last-child, .NewChat .group input:last-child {
+  margin: 20px 0 !important;
+  background: red;
+}
+.NewChat .group {
+  display: grid;
+  grid-template-rows: auto auto auto auto 1fr auto;
+}
+.NewChat .dialogue {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.NewChat .dialogue button {
+  max-width: 250px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.selectedUsersContainer {
+  height: 70px;
+  margin-top: 10px;
+  border-radius: 16px;
+}
+.selectedUsersContainer::-webkit-scrollbar {
+  display: none;
+}
+.selectedUsersContainer .selectedUsersBox {
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  height: 100%;
+  width: auto;
+}
+.selectedUsersContainer .selectedUsersBox > p {
+  display: flex;
+  margin: auto;
+}
+
+.GlobalSearch {
+  margin-bottom: auto;
+}
+.GlobalSearch ul {
+  overflow-y: scroll;
+}
+.GlobalSearch ul::-webkit-scrollbar {
+  display: none;
+}
+
+.NewChatFooter {
+  margin: auto 0 0 0;
+  padding: 10px 15px 0 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+}
+
+.SelectedUser {
+  padding: 5px;
+  display: flex;
+  border-radius: 21px;
+  margin-right: 10px;
+}
+.SelectedUser p {
+  margin: auto 10px;
+  white-space: nowrap;
+}
+
+.SearchUser {
+  display: grid;
+  grid-template-areas: "icon username dots";
+  grid-template-columns: auto 1fr auto;
+  padding: 20px;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  grid-column-gap: 24px;
+  width: 100%;
+}
+.SearchUser .Icon {
+  margin: auto 0;
+  grid-area: icon;
+}
+.SearchUser p {
+  font-size: 20px;
+  margin: auto 0;
+  grid-area: username;
+}
+.SearchUser span {
+  font-size: 14px;
+  margin: 2px 0 auto 0;
+  grid-area: status;
+}
+.SearchUser .ButtonThird {
+  margin: auto 0;
+  grid-area: dots;
+}
+
+@media all and (max-width: 1100px) {
+  .NewChat {
+    margin-bottom: auto;
+    margin-top: 10px;
+    height: calc(100% - 100px);
+  }
+}
+
+/*# sourceMappingURL=NewChat.css.map */
